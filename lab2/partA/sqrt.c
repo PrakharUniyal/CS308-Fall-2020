@@ -5,6 +5,13 @@ positive number. */
 #include <stdlib.h>
 #include <math.h>
 
+/*  
+	Usage - ./sqrt 81
+	Output- Sqrt of 81 is 9.000000
+	
+	NOTE: Use -lm switch to link the math 
+	library with this code while compiling.
+*/
 int main(int argc, char* argv[]) {
 	
 	if (argc != 2) {
