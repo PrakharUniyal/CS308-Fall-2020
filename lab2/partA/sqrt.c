@@ -46,7 +46,7 @@ int main(int argc, char* argv[]) {
 	int input = atoi(argv[1]);
 	if (is_negative)
 	{
-		printf("DEBUG: Sqrt of -%d is %fi.\n", input, sqrt(input));
+		printf("NEGSUPPORT: Sqrt of -%d is %fi.\n", input, sqrt(input));
 	}
 	else
 	{
