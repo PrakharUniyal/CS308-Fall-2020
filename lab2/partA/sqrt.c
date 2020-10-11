@@ -21,6 +21,19 @@ int main(int argc, char* argv[]) {
 		exit(-1);
 	}
 
+	int is_negative = 0;
+	char magnitude[strlen(argv[1]) - 1];
+	if (argv[1][0] == '-')
+	{
+		for (int i = 1; i < strlen(argv[1]); i++)
+		{
+			magnitude[i - 1] = argv[1][i];
+		}
+
+		is_negative = 1;
+		argv[1] = magnitude;
+	}
+
 	for (int i = 0; i < strlen(argv[1]); i++)
 	{
 		if (argv[1][i]!='-' && !isdigit(argv[1][i]))
@@ -31,7 +44,14 @@ int main(int argc, char* argv[]) {
 	}
 
 	int input = atoi(argv[1]);
-	printf("Sqrt of %d is %f\n",input,sqrt(input));
+	if (is_negative)
+	{
+		printf("Sqrt of -%d is %fi.\n", input, sqrt(input));
+	}
+	else
+	{
+		printf("Sqrt of %d is %f.\n", input, sqrt(input));
+	}
 	printf("End of program. Exiting\n");
 	return(0);
 
